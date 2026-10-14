@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="八王子駅徒歩5分、女性専用のピラティス×24時間ジム。無料体験レッスンのご予約はこちら。">
+<link rel="icon" href="img/logo.webp">
+<title>Paw八王子 グランドオープン体験予約</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Michroma&display=swap">
+<style>
+/* 第2版：予約に特化。既存LPの構成（特長→比較→監修→理由→声→料金→FAQ）はなぞらない。
+   考え方：①1画面目で日付を選べる ②読まなくても予約できる ③不安を消す3つだけ足す ④どこからでも1タップで予約画面へ
+   見た目は参考LP（creatorzz）の作り：スマホ1列を中央、太字・字間広め、光るボタン、追従ボタン、ふわっと表示 */
+:root{
+  --bg:#FFFFFF; --sand:#F6F2EC; --sand2:#ECE5DB; --ink:#4D4744; --muted:#756C66; --line:#E3DAD0;
+  --brown:#886556; --teal:#2099AF; --teal-dk:#17798A; --teal-soft:#E4F3F6; --gold:#FFCC79; --gold-soft:#FFF4E0; --night:#3E3936;
+  --jp:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --en:"Michroma","Noto Sans JP",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--sand2);color:var(--ink);font-family:var(--jp);font-size:15px;line-height:1.8;letter-spacing:.05em;word-break:keep-all;overflow-wrap:anywhere}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:900;letter-spacing:.03em;line-height:1.45;text-wrap:balance}
+em{font-style:normal;color:var(--teal)}
+a{color:inherit}
+.mock{background:#3A3330;color:#fff;font-size:11.5px;text-align:center;padding:6px 16px;letter-spacing:.03em}
+
+.stage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,430px) minmax(0,1fr)}
+.side{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+.side-l .logo{display:block;width:150px;height:auto}
+.side-l p{margin-top:12px;font-weight:700;font-size:15px;line-height:1.8}
+.side-r .box{background:#fff;border-radius:18px;padding:22px;text-align:center;max-width:300px;box-shadow:0 10px 30px rgba(60,40,30,.10)}
+.side-r .box p{font-size:13px;font-weight:700;margin-bottom:12px}
+.main{background:var(--bg);min-width:0;box-shadow:0 0 30px rgba(60,40,30,.12)}
+@media (max-width:1000px){.stage{grid-template-columns:minmax(0,1fr)}.side{display:none}.main{box-shadow:none}}
+
+.pad{padding-inline:20px}
+section{padding-block:48px}
+.sand{background:var(--sand)}
+.ttl{text-align:center;font-size:22px}
+.en{font-family:var(--en);letter-spacing:.14em;font-size:11px;color:var(--teal);display:block;text-align:center;margin-bottom:6px}
+.lead{text-align:center;color:var(--muted);margin-top:10px;font-size:14px}
+.muted{color:var(--muted)}
+.note{font-size:11.5px;color:var(--muted);margin-top:12px;text-align:center;letter-spacing:.03em}
+
+/* ボタン */
+.btn{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;width:100%;background:linear-gradient(180deg,#2BAAC0,var(--teal-dk));color:#fff;text-decoration:none;font-weight:900;font-size:16.5px;letter-spacing:.06em;border-radius:12px;padding:15px 18px;box-shadow:0 5px 0 #0F5C69;border:0;cursor:pointer;font-family:var(--jp)}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #0F5C69}
+.btn .free{background:var(--gold);color:var(--ink);border-radius:999px;font-size:12px;padding:2px 10px;font-weight:900}
+.btn .sec{font-size:11px;font-weight:700;opacity:.92;width:100%;text-align:center;margin-top:-6px;letter-spacing:.04em}
+.btn.shine::before{content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.55));transform:skewX(-20deg);animation:shine 2.2s infinite}
+@keyframes shine{0%{left:-75%}60%,100%{left:130%}}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--brown);outline-offset:3px}
+.line{display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#06A046;border:2px solid #06C755;font-weight:900;border-radius:999px;padding:10px 18px;text-decoration:none;margin-top:14px;font-size:14px}
+
+.js .fade-up.pre{opacity:0;transform:translateY(20px)}
+.fade-up{transition:opacity .7s ease,transform .7s ease}
+.fade-up.active{opacity:1;transform:none}
+
+/* FV */
+.fv{background:var(--sand)}
+.fv-copy{padding:20px 20px 16px;text-align:center}
+.go{display:inline-flex;align-items:center;gap:8px;font-family:var(--en);font-size:11.5px;letter-spacing:.18em;color:var(--brown)}
+.go::before,.go::after{content:"";width:20px;height:1px;background:var(--brown)}
+.tags{display:flex;justify-content:center;gap:6px;margin-top:8px;flex-wrap:wrap}
+.tag{display:inline-block;background:var(--brown);color:#fff;font-weight:900;font-size:12px;letter-spacing:.06em;padding:2px 9px;border-radius:4px}
+.tag.t2{background:#fff;color:var(--brown);border:1px solid var(--brown)}
+.fv h1{font-size:28px;line-height:1.42;margin-top:12px}
+.fv-pic{position:relative;aspect-ratio:16/10;width:100%;background:url(img/fv.webp) 62% 30%/cover no-repeat}
+.badges{position:absolute;left:12px;right:12px;bottom:-28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.badges div{background:#fff;border-radius:12px;padding:8px 4px;text-align:center;font-weight:900;font-size:11.5px;line-height:1.35;box-shadow:0 4px 14px rgba(60,40,30,.15);border:2px solid var(--teal)}
+.badges b{display:block;font-size:20px;color:var(--teal);font-family:var(--en);line-height:1.3}
+
+/* 予約パネル（FVと本体で共通） */
+.book{background:#fff;padding:44px 20px 24px}
+.book-h{text-align:center;font-weight:900;font-size:18px;line-height:1.5}
+.book-h small{display:block;font-size:12.5px;color:var(--muted);font-weight:700;margin-top:2px}
+.days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:14px}
+.days.many{grid-template-columns:repeat(4,minmax(0,1fr))}
+.day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-decoration:none;border:1.5px solid var(--line);border-radius:12px;padding:8px 2px;background:#fff;color:var(--ink);font-weight:900;line-height:1.3;min-height:64px}
+.day .w{font-size:11px;color:var(--muted);font-weight:700}
+.day .d{font-family:var(--en);font-size:clamp(12.5px,3.8vw,16px);letter-spacing:-.02em;white-space:nowrap;margin-top:2px}
+.day .lb{font-size:10.5px;color:#fff;background:var(--teal);border-radius:999px;padding:0 7px;margin-bottom:2px}
+.day.sat .w{color:#2C6FB7}.day.sun .w{color:#C2453B}
+.day:hover,.day:focus-visible{border-color:var(--teal);background:var(--teal-soft)}
+.day.today{border-color:var(--teal)}
+.book .btn{margin-top:16px}
+.ok3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin-top:14px;list-style:none;padding:0}
+.ok3 li{font-size:11.5px;font-weight:700;text-align:center;line-height:1.45;background:var(--sand);border-radius:8px;padding:8px 4px}
+.ok3 li::before{content:"";display:block;width:16px;height:16px;margin:0 auto 4px;border-radius:50%;background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5' fill='none' stroke='white' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/11px no-repeat}
+.howto{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
+/* おひとり／お友だちと2人 の切り替え（ペアだけグループレッスンへ） */
+.mode{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:14px;background:#fff;border:2px solid var(--teal);border-radius:12px;overflow:hidden}
+.mode button{font:inherit;font-weight:900;font-size:14px;padding:10px 4px;border:0;background:#fff;color:var(--teal-dk);cursor:pointer;line-height:1.35;letter-spacing:.03em}
+.mode button small{display:block;font-size:10.5px;font-weight:700;color:var(--muted)}
+.mode button[aria-pressed="true"]{background:var(--teal);color:#fff}
+.mode button[aria-pressed="true"] small{color:#E4F3F6}
+.pairnote{display:none;background:var(--gold-soft);border-radius:10px;padding:10px 12px;font-size:12.5px;margin-top:10px;line-height:1.7}
+.pair .pairnote{display:block}
+.pairlink{display:block;text-align:center;margin-top:12px;font-size:13px;font-weight:700;color:var(--brown)}
+.offer .go2{grid-column:2;margin-top:6px;font-size:12.5px;font-weight:900;color:var(--teal-dk);text-decoration:underline;background:none;border:0;padding:0;text-align:left;cursor:pointer;font-family:var(--jp)}
+
+/* 特典 */
+.offer{background:var(--gold-soft);border:2px solid var(--gold);border-radius:14px;padding:16px;margin-top:18px}
+.offer .k{display:block;text-align:center;font-size:12px;font-weight:900;color:var(--brown);letter-spacing:.08em}
+.offer ul{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
+.offer li{background:#fff;border-radius:10px;padding:10px 12px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 10px;align-items:center}
+.offer .num{font-family:var(--en);color:var(--brown);font-size:18px;grid-row:span 2}
+.offer b{font-size:15px}
+.offer b em{color:var(--teal-dk)}
+.offer small{font-size:11.5px;color:var(--muted);line-height:1.6}
+
+/* 不安を消す3つ */
+.worry{display:grid;gap:12px;margin-top:20px}
+.worry>div{background:#fff;border-radius:14px;padding:16px;display:grid;grid-template-columns:48px minmax(0,1fr);gap:4px 12px;align-items:start}
+.worry .ic{grid-row:span 2;width:48px;height:48px;border-radius:50%;background:var(--teal-soft);display:grid;place-items:center}
+.worry h3{font-size:16px}
+.worry p{font-size:13.5px;color:var(--muted)}
+
+/* 中の様子 */
+.pics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:18px}
+.pics figure{margin:0;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1}
+.pics figure.wide{grid-column:span 2;aspect-ratio:16/9}
+.pics .ph{position:absolute;inset:0;background-size:cover;background-position:center}
+.pics figcaption{position:absolute;left:8px;bottom:8px;background:rgba(255,255,255,.92);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:900}
+.pics figcaption small{font-weight:500;color:var(--muted);margin-left:4px;font-size:10.5px}
+
+/* 声 */
+.voices{display:grid;gap:10px;margin-top:18px}
+.voice{background:#fff;border-radius:14px;padding:14px 16px;border:1px solid var(--line)}
+.voice .stars{color:#E8A93A;letter-spacing:2px;font-size:13px}
+.voice p{font-size:13.5px;margin-top:4px}
+
+/* FAQ */
+.faq{margin-top:18px;display:grid;gap:8px}
+.faq-item{background:#fff;border-radius:12px;overflow:hidden}
+.faq-q{width:100%;display:flex;align-items:center;gap:10px;padding:13px 14px;background:none;border:0;text-align:left;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;letter-spacing:.03em;font-size:14.5px}
+.faq-q .q{font-family:var(--en);color:var(--teal);font-size:14px;flex:none}
+.faq-q .ic{margin-left:auto;flex:none;width:10px;height:10px;border-right:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(45deg) translate(-2px,-2px);transition:transform .3s ease}
+.faq-item.is-open .ic{transform:rotate(-135deg) translate(-1px,-1px)}
+.faq-a{display:none;padding:0 14px 14px 38px;color:var(--muted);font-size:13.5px}
+.faq-item.is-open .faq-a{display:block}
+
+/* 店舗情報 */
+.shop{margin-top:18px;background:#fff;border-radius:14px;padding:2px 16px;border:1px solid var(--line)}
+.shop div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px}
+.shop div:last-child{border-bottom:0}
+.shop dt{font-weight:900;color:var(--brown);font-size:12.5px}
+.shop dd{margin:0}
+.map{display:inline-block;margin-top:2px;font-size:13px;font-weight:700;color:var(--teal-dk)}
+
+footer{background:var(--night);color:#E9E1D8;font-size:12px;padding:28px 20px 120px;letter-spacing:.05em}
+footer .logo{display:block;width:90px;height:auto;margin-bottom:14px}
+footer .links{display:flex;flex-wrap:wrap;gap:14px}
+
+/* 追従ボタン：常に予約へ1タップ */
+.fixed-cta{position:fixed;left:50%;bottom:calc(12px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:calc(100% - 24px);max-width:406px;z-index:20;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.fixed-cta.show{opacity:1;pointer-events:auto}
+.fixed-cta .btn{animation:pulse 3s ease-in-out infinite;padding:13px 16px}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@media (min-width:1001px){.fixed-cta{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn.shine::before,.fixed-cta .btn{animation:none}.js .fade-up.pre{opacity:1;transform:none}}
+</style>
+
+
+</head>
+<body>
+<div class="stage">
+<aside class="side side-l"><div><img class="logo" src="img/logo.webp" alt="Paw"><p>女性専用<br>ピラティス×24時間ジム<br>八王子店 GRAND OPEN</p></div></aside>
+
+<div class="main">
+
+<!-- 1 FV：見出しと、その下ですぐ日付を選べる -->
+<header class="fv">
+  <div class="fv-copy">
+    <span class="go">2026.9.15 GRAND OPEN</span>
+    <div class="tags"><span class="tag">女性専用</span><span class="tag t2">八王子駅 徒歩5分</span><span class="tag t2">初心者歓迎</span></div>
+    <h1>ピラティスも、<wbr>ジムも。<br><em>まずは無料で<wbr>体験。</em></h1>
+  </div>
+  <div class="fv-pic" role="img" aria-label="マシンピラティスのレッスンのイメージ">
+    <div class="badges">
+      <div><b>0</b>円<br>体験レッスン</div>
+      <div><b>45</b>分<br>少人数で</div>
+      <div><b>24</b>時間<br>ジムも使える</div>
+    </div>
+  </div>
+  <div class="book">
+    <p class="book-h">空いている日を<wbr>選ぶだけ<small>最短で今日。<wbr>予約は30秒で<wbr>終わります</small></p>
+    <div class="days" data-days="4"></div>
+    <a class="btn shine" href="#" data-reserve><span class="free">無料</span>体験レッスンを<wbr>予約する</a>
+    <a class="pairlink" href="#reserve" data-pair>お友だちと<wbr>2人で<wbr>来る方は<wbr>こちら ›</a>
+    <ul class="ok3"><li>その場で<br>決めなくてOK</li><li>体が<wbr>かたい<br>初心者も歓迎</li><li>女性専用<br>スタッフも女性</li></ul>
+    <p class="note">※写真は<wbr>イメージです。</p>
+  </div>
+</header>
+
+<!-- 2 特典（予約の理由になるものだけ） -->
+<section class="pad sand">
+  <span class="en">PRESENT</span>
+  <h2 class="ttl fade-up">グランドオープン特典</h2>
+  <div class="offer fade-up">
+    <span class="k">10月31日（土）まで</span>
+    <ul>
+      <li><span class="num">01</span><b>体験レッスン <em>無料</em></b><small>約45分の<wbr>マシンピラティス</small></li>
+      <li><span class="num">02</span><b>お友だちと一緒で <em>初月半額</em></b><small>お二人で<wbr>同じ日に<wbr>ご入会なら、<wbr>お二人とも<wbr>入会金無料＋<wbr>初月会費半額</small><a class="go2" href="#reserve" data-pair>お友だちと<wbr>2人で<wbr>予約する ›</a></li>
+      <li><span class="num">03</span><b>お乗り換えで <em>初月無料</em></b><small>他の<wbr>ジム・<wbr>ピラティスに<wbr>通っている方<br>（3か月以内の<wbr>退会を含む）は、<br>入会金無料＋<wbr>初月会費無料</small></li>
+    </ul>
+  </div>
+  <p class="note">※特典を<wbr>使ってご入会の場合は<wbr>6か月の<wbr>継続を<wbr>お願いしています（6か月以内の<wbr>解約は<wbr>割引分を<wbr>お支払い）。<wbr>乗り換えは<wbr>会員証・<wbr>アプリの画面・<wbr>契約書類の<wbr>いずれかを<wbr>ご提示ください。</p>
+  <div style="margin-top:18px"><a class="btn shine" href="#" data-reserve><span class="free">無料</span>体験レッスンを<wbr>予約する</a></div>
+</section>
+
+<!-- 3 予約の前の不安を消す3つ -->
+<section class="pad">
+  <span class="en">NO WORRY</span>
+  <h2 class="ttl fade-up">はじめてで<wbr>も、<br><em>これだけ</em>で<wbr>大丈夫。</h2>
+  <div class="worry">
+    <div class="fade-up"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="#2099AF" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="#2099AF" stroke-width="2" stroke-linecap="round"/></svg></span><h3>全体で約60分</h3><p>館内の<wbr>ご案内、<wbr>体験レッスン<wbr>約45分、<wbr>ご相談。<wbr>仕事帰りに<wbr>寄れる長さです。</p></div>
+    <div class="fade-up"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l-1 12H7z" fill="none" stroke="#2099AF" stroke-width="2" stroke-linejoin="round"/><path d="M9 8a3 3 0 0 1 6 0" fill="none" stroke="#2099AF" stroke-width="2"/></svg></span><h3>持ち物は3つ</h3><p>・動きやすい服装<br>・靴下（滑り止め付きが<wbr>おすすめ）<br>・タオル<br>シャワーと<wbr>アメニティも<wbr>あります。</p></div>
+    <div class="fade-up"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#2099AF" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h3>その場で<wbr>決めなくてOK</h3><p>持ち帰って<wbr>考えていただいて<wbr>大丈夫です。<wbr>体験だけの方も<wbr>たくさんいらっしゃいます。</p></div>
+  </div>
+</section>
+
+<!-- 4 中の様子（読まなくても分かる写真だけ） -->
+<section class="pad sand">
+  <span class="en">INSIDE</span>
+  <h2 class="ttl fade-up">ピラティスの日も、<br>ジムの日も、<wbr><em>ここ1か所で。</em></h2>
+  <div class="pics">
+    <figure class="wide fade-up"><div class="ph" style="background-image:url(img/studio_hachioji.webp)" role="img" aria-label="八王子店のマシンピラティスのスタジオ"></div><figcaption>マシンピラティス<small>1クラス最大5名・八王子店</small></figcaption></figure>
+    <figure class="fade-up"><div class="ph" style="background-image:url(img/gym.webp)" role="img" aria-label="八王子店のトレーニングエリア"></div><figcaption>24時間ジム<small>八王子店</small></figcaption></figure>
+    <figure class="fade-up"><div class="ph" style="background-image:url(img/powder.webp)" role="img" aria-label="パウダールーム"></div><figcaption>パウダールーム<small>他店舗</small></figcaption></figure>
+  </div>
+  <p class="note">※「他店舗」は<wbr>Pawの<wbr>他の店舗の<wbr>写真です。</p>
+</section>
+
+<!-- 5 声 -->
+<section class="pad">
+  <span class="en">REVIEW</span>
+  <h2 class="ttl fade-up">体験された方の声</h2>
+  <div class="voices">
+    <div class="voice fade-up"><div class="stars" aria-label="5つ星">★★★★★</div><p>新店舗なので、<wbr>とても綺麗でした！<wbr>スタッフの方も<wbr>親切に<wbr>説明していただき、<wbr>これから<wbr>通うのも<wbr>不安なく<wbr>通えそうです。</p></div>
+    <div class="voice fade-up"><div class="stars" aria-label="5つ星">★★★★★</div><p>女性しか<wbr>いない空間。<wbr>普通の<wbr>24時間ジムのように<wbr>男性利用者が<wbr>いないのは、<wbr>夜間利用する際も<wbr>嬉しいですよね。</p></div>
+  </div>
+  <p class="note">※Googleマップの<wbr>口コミから<wbr>一部を<wbr>抜粋しています。</p>
+</section>
+
+<!-- 6 予約（ページの中心。2週間分の日付） -->
+<section class="sand" id="reserve" style="padding-block:40px">
+  <div class="book" style="background:transparent;padding-top:0">
+    <span class="en">RESERVE</span>
+    <p class="book-h" style="font-size:21px">体験の日を<wbr>選んでください<small>日付を<wbr>押すと、<wbr>その日の<wbr>空き枠が<wbr>開きます</small></p>
+    <div class="mode" role="group" aria-label="来られる人数">
+      <button type="button" data-mode="solo" aria-pressed="true">おひとりで<small>ご新規様体験レッスン</small></button>
+      <button type="button" data-mode="pair" aria-pressed="false">お友だちと2人で<small>グループレッスン</small></button>
+    </div>
+    <p class="pairnote">お二人で<wbr>受けられる<wbr>グループレッスンの<wbr>枠が<wbr>開きます。<wbr>同じ時間の<wbr>レッスンを、<wbr>お二人<wbr>それぞれ<wbr>ご予約ください。</p>
+    <div class="days many" data-days="12"></div>
+    <a class="btn shine" href="#" data-reserve data-switch><span class="free">無料</span>すべての空き枠を<wbr>見る<span class="sec">予約は<wbr>30秒・<wbr>レッスンは<wbr>少人数のため<wbr>枠に<wbr>限りが<wbr>あります</span></a>
+    <p class="howto">予約画面（hacomono）で<wbr>時間を選び、<br>お名前と<wbr>連絡先を<wbr>入れるだけです</p>
+    <a class="line" href="https://lin.ee/Wxy4upJ" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s6-3.5 8.2-6.1C21.6 14.1 22 12.6 22 11c0-4.4-4.5-8-10-8z" fill="#06C755"/></svg>見学だけ・<wbr>ご質問は<wbr>LINEで</a>
+  </div>
+</section>
+
+<!-- 7 FAQ（予約の前に止まる質問だけ） -->
+<section class="pad">
+  <span class="en">FAQ</span>
+  <h2 class="ttl">予約の前に<wbr>よくある質問</h2>
+  <div class="faq">
+    <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span class="q">Q</span>料金は<wbr>いくらですか？<span class="ic"></span></button><div class="faq-a">ピラティス月4回で<wbr>月12,540円、<wbr>ジムも毎日使える<wbr>プランで<wbr>月16,940円、<wbr>ジムだけなら<wbr>月8,580円です（すべて税込）。<wbr>合うプランは<wbr>体験の後に<wbr>ご提案します。</div></div>
+    <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span class="q">Q</span>運動が<wbr>初めてで<wbr>も<wbr>大丈夫ですか？<span class="ic"></span></button><div class="faq-a">大丈夫です。<wbr>少人数の<wbr>レッスンなので、<wbr>一人ひとりの<wbr>動きを<wbr>見ながら<wbr>進めます。</div></div>
+    <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span class="q">Q</span>見学だけで<wbr>も<wbr>いいですか？<span class="ic"></span></button><div class="faq-a">はい、<wbr>施設見学も<wbr>無料です。<wbr>LINEで<wbr>ご希望の日時を<wbr>お送りください。</div></div>
+    <div class="faq-item"><button type="button" class="faq-q" aria-expanded="false"><span class="q">Q</span>しばりや<wbr>違約金は<wbr>ありますか？<span class="ic"></span></button><div class="faq-a">通常の<wbr>ご入会は、<wbr>原則として<wbr>しばりは<wbr>ありません。<wbr>特典を<wbr>使ってご入会の<wbr>場合のみ<wbr>6か月の<wbr>継続を<wbr>お願いしています。</div></div>
+  </div>
+</section>
+
+<!-- 8 店舗情報 -->
+<section class="pad sand" id="access" style="padding-block:40px">
+  <span class="en">ACCESS</span>
+  <h2 class="ttl">店舗情報</h2>
+  <dl class="shop">
+    <div><dt>店舗</dt><dd>Paw 八王子店</dd></div>
+    <div><dt>住所</dt><dd>東京都八王子市中町8-7<br>Hf 八王子レジデンス 2F<br><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%85%AB%E7%8E%8B%E5%AD%90%E5%B8%82%E4%B8%AD%E7%94%BA8-7" target="_blank" rel="noopener">地図を開く</a></dd></div>
+    <div><dt>アクセス</dt><dd>八王子駅から<wbr>徒歩5分<br><span class="muted" style="font-size:12px">駐車場・<wbr>駐輪場は<wbr>ありません</span></dd></div>
+    <div><dt>営業時間</dt><dd>24時間（会員様）<br><span class="muted" style="font-size:12px">スタッフは<wbr>9:00〜21:00<br>（曜日に<wbr>より<wbr>異なります）</span></dd></div>
+  </dl>
+  <div style="margin-top:18px"><a class="btn shine" href="#" data-reserve><span class="free">無料</span>体験レッスンを<wbr>予約する</a></div>
+</section>
+
+<footer>
+  <img class="logo" src="img/logo_w.webp" alt="Paw">
+  <div class="links"><a href="https://paw-fit.jp/" target="_blank" rel="noopener">公式サイト</a><a href="https://paw-fit.jp/privacy" target="_blank" rel="noopener">プライバシーポリシー</a><a href="https://paw-fit.jp/terms" target="_blank" rel="noopener">利用規約</a><a href="https://www.instagram.com/paw_hachioji/" target="_blank" rel="noopener">Instagram</a></div>
+  <div style="margin-top:12px">©PAW All Rights Reserved.</div>
+</footer>
+
+</div>
+
+<aside class="side side-r"><div class="box"><p>八王子駅 徒歩5分<br>まずは<wbr>無料で<wbr>体験</p><a class="btn shine" href="#" data-reserve><span class="free">無料</span>体験を予約</a></div></aside>
+</div>
+
+<div class="fixed-cta" id="fixed"><a class="btn shine" href="#" data-reserve><span class="free">無料</span>体験レッスンを<wbr>予約する</a></div>
+
+<script>
+(function(){
+  document.documentElement.classList.add("js");
+  // 予約先：hacomono（八王子）。基本は「ご新規様体験レッスン」(75)、ペアだけ「グループレッスン」(70)
+  var URL={solo:"https://paw-fit.hacomono.jp/reserve/schedule/9/75?trial=true", pair:"https://paw-fit.hacomono.jp/reserve/schedule/9/70?trial=true"};
+  [].forEach.call(document.querySelectorAll("[data-reserve]"),function(a){ a.href=URL.solo; a.target="_blank"; a.rel="noopener"; });
+
+  // 日付ボタン：今日から n 日分
+  var W=["日","月","火","水","木","金","土"], t0=new Date(); t0.setHours(0,0,0,0);
+  function pad(n){return (n<10?"0":"")+n;}
+  [].forEach.call(document.querySelectorAll("[data-days]"),function(box){
+    var n=+box.getAttribute("data-days");
+    for(var i=0;i<n;i++){
+      var x=new Date(t0); x.setDate(t0.getDate()+i); var w=x.getDay();
+      var a=document.createElement("a"); a.className="day"+(i===0?" today":"")+(w===6?" sat":"")+(w===0?" sun":"");
+      a.setAttribute("data-date",x.getFullYear()+"-"+pad(x.getMonth()+1)+"-"+pad(x.getDate()));
+      a.href=URL.solo+"&date_from="+a.getAttribute("data-date"); a.target="_blank"; a.rel="noopener";
+      var lb=i===0?'<span class="lb">今日</span>':(i===1?'<span class="lb">明日</span>':"");
+      a.innerHTML=lb+'<span class="d">'+(x.getMonth()+1)+"/"+x.getDate()+'</span><span class="w">'+W[w]+"曜日</span>";
+      a.setAttribute("aria-label",(x.getMonth()+1)+"月"+x.getDate()+"日（"+W[w]+"）の空き枠を見る");
+      box.appendChild(a);
+    }
+  });
+
+  // おひとり／お友だちと2人：予約の区画の日付とボタンだけ行き先を切り替える
+  var rsvBox=document.querySelector("#reserve .book");
+  function setMode(m){
+    rsvBox.classList.toggle("pair",m==="pair");
+    [].forEach.call(rsvBox.querySelectorAll("[data-mode]"),function(b){ b.setAttribute("aria-pressed",String(b.getAttribute("data-mode")===m)); });
+    [].forEach.call(rsvBox.querySelectorAll(".day"),function(a){ a.href=URL[m]+"&date_from="+a.getAttribute("data-date"); });
+    rsvBox.querySelector("[data-switch]").href=URL[m];
+  }
+  [].forEach.call(rsvBox.querySelectorAll("[data-mode]"),function(b){ b.addEventListener("click",function(){ setMode(b.getAttribute("data-mode")); }); });
+  [].forEach.call(document.querySelectorAll("[data-pair]"),function(a){ a.addEventListener("click",function(){ setMode("pair"); }); });
+
+  // ふわっと表示
+  var els=[].slice.call(document.querySelectorAll(".fade-up")), vh=window.innerHeight;
+  els.forEach(function(el){
+    if(el.getBoundingClientRect().top > vh*0.9){ el.classList.add("pre"); }
+    var sib=[].slice.call(el.parentNode.children).filter(function(c){return c.classList.contains("fade-up");});
+    var i=sib.indexOf(el); if(i>0) el.style.transitionDelay=Math.min(i,4)*0.1+"s";
+  });
+  // 追従ボタン：FVの予約パネルを過ぎたら出し、予約の区画が見えている間は隠す
+  var fixed=document.getElementById("fixed"), first=document.querySelector(".fv .book"), rsv=document.getElementById("reserve");
+  function onScroll(){
+    var h=window.innerHeight;
+    els.forEach(function(el){ if(el.classList.contains("pre") && el.getBoundingClientRect().top < h*0.9){ el.classList.add("active"); el.classList.remove("pre"); } });
+    var r=rsv.getBoundingClientRect();
+    fixed.classList.toggle("show", first.getBoundingClientRect().bottom<0 && !(r.top<h && r.bottom>0));
+  }
+  window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+  [].forEach.call(document.querySelectorAll(".faq-q"),function(b){
+    b.addEventListener("click",function(){ var o=b.parentNode.classList.toggle("is-open"); b.setAttribute("aria-expanded",String(o)); });
+  });
+})();
+</script>
+
+</body>
+</html>
