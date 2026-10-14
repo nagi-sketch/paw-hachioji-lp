@@ -8,23 +8,23 @@
 <link rel="icon" href="img/logo.webp">
 <title>Paw八王子 グランドオープン体験予約</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Michroma&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Jost:wght@300;400;500&display=swap">
 <style>
 /* 第2版：予約に特化。既存LPの構成（特長→比較→監修→理由→声→料金→FAQ）はなぞらない。
    考え方：①1画面目で日付を選べる ②読まなくても予約できる ③不安を消す3つだけ足す ④どこからでも1タップで予約画面へ
    見た目は参考LP（creatorzz）の作り：スマホ1列を中央、太字・字間広め、光るボタン、追従ボタン、ふわっと表示 */
 :root{
-  --bg:#FFFFFF; --sand:#F6F2EC; --sand2:#ECE5DB; --ink:#4D4744; --muted:#756C66; --line:#E3DAD0;
+  --bg:#FFFFFF; --sand:#F6F2EC; --sand2:#ECE5DB; --ink:#393C41; --muted:#756C66; --line:#E3DAD0;
   --brown:#886556; --teal:#2099AF; --teal-dk:#17798A; --teal-soft:#E4F3F6; --gold:#FFCC79; --gold-soft:#FFF4E0; --night:#3E3936;
   --jp:"Noto Sans JP","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
-  --en:"Michroma","Noto Sans JP",sans-serif;
+  --en:"Jost","Noto Sans JP",sans-serif;
   color-scheme:light;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--sand2);color:var(--ink);font-family:var(--jp);font-size:15px;line-height:1.8;letter-spacing:.05em;word-break:keep-all;overflow-wrap:anywhere}
+body{margin:0;background:var(--sand2);color:var(--ink);font-family:var(--jp);font-weight:400;font-feature-settings:"palt";font-size:15px;line-height:1.9;letter-spacing:.08em;word-break:keep-all;overflow-wrap:anywhere}
 p{margin:0}
-h1,h2,h3{margin:0;font-weight:900;letter-spacing:.03em;line-height:1.45;text-wrap:balance}
+h1,h2,h3{margin:0;font-weight:500;letter-spacing:.1em;line-height:1.6;text-wrap:balance}
 em{font-style:normal;color:var(--teal)}
 a{color:inherit}
 .mock{background:#3A3330;color:#fff;font-size:11.5px;text-align:center;padding:6px 16px;letter-spacing:.03em}
@@ -41,21 +41,21 @@ a{color:inherit}
 .pad{padding-inline:20px}
 section{padding-block:48px}
 .sand{background:var(--sand)}
-.ttl{text-align:center;font-size:22px}
-.en{font-family:var(--en);letter-spacing:.14em;font-size:11px;color:var(--teal);display:block;text-align:center;margin-bottom:6px}
+.ttl{text-align:center;font-size:21px}
+.en{font-family:var(--en);font-weight:300;letter-spacing:.2em;font-size:12px;color:var(--teal);display:block;text-align:center;margin-bottom:6px}
 .lead{text-align:center;color:var(--muted);margin-top:10px;font-size:14px}
 .muted{color:var(--muted)}
 .note{font-size:11.5px;color:var(--muted);margin-top:12px;text-align:center;letter-spacing:.03em}
 
 /* ボタン */
-.btn{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;width:100%;background:linear-gradient(180deg,#2BAAC0,var(--teal-dk));color:#fff;text-decoration:none;font-weight:900;font-size:16.5px;letter-spacing:.06em;border-radius:12px;padding:15px 18px;box-shadow:0 5px 0 #0F5C69;border:0;cursor:pointer;font-family:var(--jp)}
+.btn{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;width:100%;background:linear-gradient(180deg,#2BAAC0,var(--teal-dk));color:#fff;text-decoration:none;font-weight:700;font-size:16.5px;letter-spacing:.06em;border-radius:12px;padding:15px 18px;box-shadow:0 5px 0 #0F5C69;border:0;cursor:pointer;font-family:var(--jp)}
 .btn:active{transform:translateY(3px);box-shadow:0 2px 0 #0F5C69}
-.btn .free{background:var(--gold);color:var(--ink);border-radius:999px;font-size:12px;padding:2px 10px;font-weight:900}
+.btn .free{background:var(--gold);color:var(--ink);border-radius:999px;font-size:12px;padding:2px 10px;font-weight:500}
 .btn .sec{font-size:11px;font-weight:700;opacity:.92;width:100%;text-align:center;margin-top:-6px;letter-spacing:.04em}
 .btn.shine::before{content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,.55));transform:skewX(-20deg);animation:shine 2.2s infinite}
 @keyframes shine{0%{left:-75%}60%,100%{left:130%}}
 .btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--brown);outline-offset:3px}
-.line{display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#06A046;border:2px solid #06C755;font-weight:900;border-radius:999px;padding:10px 18px;text-decoration:none;margin-top:14px;font-size:14px}
+.line{display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#06A046;border:2px solid #06C755;font-weight:500;border-radius:999px;padding:10px 18px;text-decoration:none;margin-top:14px;font-size:14px}
 
 .js .fade-up.pre{opacity:0;transform:translateY(20px)}
 .fade-up{transition:opacity .7s ease,transform .7s ease}
@@ -64,26 +64,26 @@ section{padding-block:48px}
 /* FV */
 .fv{background:var(--sand)}
 .fv-copy{padding:20px 20px 16px;text-align:center}
-.go{display:inline-flex;align-items:center;gap:8px;font-family:var(--en);font-size:11.5px;letter-spacing:.18em;color:var(--brown)}
+.go{display:inline-flex;align-items:center;gap:8px;font-family:var(--en);font-weight:300;font-size:13px;letter-spacing:.24em;color:var(--brown)}
 .go::before,.go::after{content:"";width:20px;height:1px;background:var(--brown)}
 .tags{display:flex;justify-content:center;gap:6px;margin-top:8px;flex-wrap:wrap}
-.tag{display:inline-block;background:var(--brown);color:#fff;font-weight:900;font-size:12px;letter-spacing:.06em;padding:2px 9px;border-radius:4px}
+.tag{display:inline-block;background:var(--brown);color:#fff;font-weight:500;font-size:12px;letter-spacing:.06em;padding:2px 9px;border-radius:4px}
 .tag.t2{background:#fff;color:var(--brown);border:1px solid var(--brown)}
-.fv h1{font-size:28px;line-height:1.42;margin-top:12px}
+.fv h1{font-size:26px;line-height:1.6;margin-top:14px}
 .fv-pic{position:relative;aspect-ratio:16/10;width:100%;background:url(img/fv.webp) 62% 30%/cover no-repeat}
 .badges{position:absolute;left:12px;right:12px;bottom:-28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
-.badges div{background:#fff;border-radius:12px;padding:8px 4px;text-align:center;font-weight:900;font-size:11.5px;line-height:1.35;box-shadow:0 4px 14px rgba(60,40,30,.15);border:2px solid var(--teal)}
-.badges b{display:block;font-size:20px;color:var(--teal);font-family:var(--en);line-height:1.3}
+.badges div{background:#fff;border-radius:12px;padding:8px 4px;text-align:center;font-weight:500;font-size:11.5px;line-height:1.35;box-shadow:0 4px 14px rgba(60,40,30,.15);border:2px solid var(--teal)}
+.badges b{display:block;font-size:28px;font-weight:300;color:var(--teal);font-family:var(--en);line-height:1.2;letter-spacing:0}
 
 /* 予約パネル（FVと本体で共通） */
 .book{background:#fff;padding:44px 20px 24px}
-.book-h{text-align:center;font-weight:900;font-size:18px;line-height:1.5}
+.book-h{text-align:center;font-weight:500;font-size:18px;line-height:1.5}
 .book-h small{display:block;font-size:12.5px;color:var(--muted);font-weight:700;margin-top:2px}
 .days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:14px}
 .days.many{grid-template-columns:repeat(4,minmax(0,1fr))}
-.day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-decoration:none;border:1.5px solid var(--line);border-radius:12px;padding:8px 2px;background:#fff;color:var(--ink);font-weight:900;line-height:1.3;min-height:64px}
+.day{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;text-decoration:none;border:1.5px solid var(--line);border-radius:12px;padding:8px 2px;background:#fff;color:var(--ink);font-weight:500;line-height:1.3;min-height:64px}
 .day .w{font-size:11px;color:var(--muted);font-weight:700}
-.day .d{font-family:var(--en);font-size:clamp(12.5px,3.8vw,16px);letter-spacing:-.02em;white-space:nowrap;margin-top:2px}
+.day .d{font-family:var(--en);font-weight:400;font-size:clamp(16px,4.8vw,20px);letter-spacing:0;white-space:nowrap;margin-top:2px}
 .day .lb{font-size:10.5px;color:#fff;background:var(--teal);border-radius:999px;padding:0 7px;margin-bottom:2px}
 .day.sat .w{color:#2C6FB7}.day.sun .w{color:#C2453B}
 .day:hover,.day:focus-visible{border-color:var(--teal);background:var(--teal-soft)}
@@ -95,21 +95,21 @@ section{padding-block:48px}
 .howto{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
 /* おひとり／お友だちと2人 の切り替え（ペアだけグループレッスンへ） */
 .mode{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:14px;background:#fff;border:2px solid var(--teal);border-radius:12px;overflow:hidden}
-.mode button{font:inherit;font-weight:900;font-size:14px;padding:10px 4px;border:0;background:#fff;color:var(--teal-dk);cursor:pointer;line-height:1.35;letter-spacing:.03em}
+.mode button{font:inherit;font-weight:500;font-size:14px;padding:10px 4px;border:0;background:#fff;color:var(--teal-dk);cursor:pointer;line-height:1.35;letter-spacing:.03em}
 .mode button small{display:block;font-size:10.5px;font-weight:700;color:var(--muted)}
 .mode button[aria-pressed="true"]{background:var(--teal);color:#fff}
 .mode button[aria-pressed="true"] small{color:#E4F3F6}
 .pairnote{display:none;background:var(--gold-soft);border-radius:10px;padding:10px 12px;font-size:12.5px;margin-top:10px;line-height:1.7}
 .pair .pairnote{display:block}
 .pairlink{display:block;text-align:center;margin-top:12px;font-size:13px;font-weight:700;color:var(--brown)}
-.offer .go2{grid-column:2;margin-top:6px;font-size:12.5px;font-weight:900;color:var(--teal-dk);text-decoration:underline;background:none;border:0;padding:0;text-align:left;cursor:pointer;font-family:var(--jp)}
+.offer .go2{grid-column:2;margin-top:6px;font-size:12.5px;font-weight:500;color:var(--teal-dk);text-decoration:underline;background:none;border:0;padding:0;text-align:left;cursor:pointer;font-family:var(--jp)}
 
 /* 特典 */
 .offer{background:var(--gold-soft);border:2px solid var(--gold);border-radius:14px;padding:16px;margin-top:18px}
-.offer .k{display:block;text-align:center;font-size:12px;font-weight:900;color:var(--brown);letter-spacing:.08em}
+.offer .k{display:block;text-align:center;font-size:12px;font-weight:500;color:var(--brown);letter-spacing:.08em}
 .offer ul{list-style:none;padding:0;margin:10px 0 0;display:grid;gap:8px}
 .offer li{background:#fff;border-radius:10px;padding:10px 12px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 10px;align-items:center}
-.offer .num{font-family:var(--en);color:var(--brown);font-size:18px;grid-row:span 2}
+.offer .num{font-family:var(--en);font-weight:300;color:var(--brown);font-size:24px;grid-row:span 2}
 .offer b{font-size:15px}
 .offer b em{color:var(--teal-dk)}
 .offer small{font-size:11.5px;color:var(--muted);line-height:1.6}
@@ -126,7 +126,7 @@ section{padding-block:48px}
 .pics figure{margin:0;position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1}
 .pics figure.wide{grid-column:span 2;aspect-ratio:16/9}
 .pics .ph{position:absolute;inset:0;background-size:cover;background-position:center}
-.pics figcaption{position:absolute;left:8px;bottom:8px;background:rgba(255,255,255,.92);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:900}
+.pics figcaption{position:absolute;left:8px;bottom:8px;background:rgba(255,255,255,.92);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:500}
 .pics figcaption small{font-weight:500;color:var(--muted);margin-left:4px;font-size:10.5px}
 
 /* 声 */
@@ -139,7 +139,7 @@ section{padding-block:48px}
 .faq{margin-top:18px;display:grid;gap:8px}
 .faq-item{background:#fff;border-radius:12px;overflow:hidden}
 .faq-q{width:100%;display:flex;align-items:center;gap:10px;padding:13px 14px;background:none;border:0;text-align:left;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;letter-spacing:.03em;font-size:14.5px}
-.faq-q .q{font-family:var(--en);color:var(--teal);font-size:14px;flex:none}
+.faq-q .q{font-family:var(--en);font-weight:400;color:var(--teal);font-size:17px;flex:none}
 .faq-q .ic{margin-left:auto;flex:none;width:10px;height:10px;border-right:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(45deg) translate(-2px,-2px);transition:transform .3s ease}
 .faq-item.is-open .ic{transform:rotate(-135deg) translate(-1px,-1px)}
 .faq-a{display:none;padding:0 14px 14px 38px;color:var(--muted);font-size:13.5px}
@@ -149,7 +149,7 @@ section{padding-block:48px}
 .shop{margin-top:18px;background:#fff;border-radius:14px;padding:2px 16px;border:1px solid var(--line)}
 .shop div{display:grid;grid-template-columns:76px minmax(0,1fr);gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-size:13.5px}
 .shop div:last-child{border-bottom:0}
-.shop dt{font-weight:900;color:var(--brown);font-size:12.5px}
+.shop dt{font-weight:500;color:var(--brown);font-size:12.5px}
 .shop dd{margin:0}
 .map{display:inline-block;margin-top:2px;font-size:13px;font-weight:700;color:var(--teal-dk)}
 
