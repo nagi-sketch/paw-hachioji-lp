@@ -336,6 +336,12 @@ footer .links{display:flex;flex-wrap:wrap;gap:14px}
   }
   [].forEach.call(rsvBox.querySelectorAll("[data-mode]"),function(b){ b.addEventListener("click",function(){ setMode(b.getAttribute("data-mode")); }); });
   [].forEach.call(document.querySelectorAll("[data-pair]"),function(a){ a.addEventListener("click",function(){ setMode("pair"); }); });
+  // ペア向けの広告（?mode=pair）から来た人は、最初からすべての予約先をグループレッスンに
+  if(/[?&]mode=pair(&|$)/.test(location.search)){
+    [].forEach.call(document.querySelectorAll("[data-reserve]"),function(a){ a.href=URL.pair; });
+    [].forEach.call(document.querySelectorAll(".day"),function(a){ a.href=URL.pair+"&date_from="+a.getAttribute("data-date"); });
+    setMode("pair");
+  }
 
   // ふわっと表示
   var els=[].slice.call(document.querySelectorAll(".fade-up")), vh=window.innerHeight;
